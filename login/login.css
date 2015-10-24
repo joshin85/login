@@ -13,6 +13,15 @@
 :-ms-input-placeholder {  
      color:#999;
 }
+input.error::-webkit-input-placeholder {
+   color: white;
+}
+.error:hover{
+	
+}
+.error:active{
+	
+}
 textarea, input { outline: none; }
 .login-container{
 	width: 250px;
@@ -44,7 +53,19 @@ textarea, input { outline: none; }
     -ms-transition: opacity 2s ease-in-out;
     -o-transition: opacity 2s ease-in-out;
 }
+.error{
+	background-position:left bottom !important;
+	color:white !important;
+}
 .login-container input[type="text"], .login-container input[type="password"]{
+	-webkit-transform: translateZ(0);
+   -moz-transform: translateZ(0);
+   -ms-transform: translateZ(0);
+   -o-transform: translateZ(0);
+   transform: translateZ(0);
+	-webkit-backface-visibility: hidden;
+	-webkit-perspective: 1000;
+	-webkit-transform: translate3d(0, 0, 0);
 	color:#585858;
 	display:block;
 	background:#white;
@@ -55,15 +76,24 @@ textarea, input { outline: none; }
     text-shadow: 0 0 0px rgba(0,0,0,0.5);
 	margin:5px auto;
 	padding-left:5px;
-}
-.login-container input[type="text"]:focus, .login-container input[type="password"]:focus{
-	background:#cfcfcf !important;
+	background: linear-gradient(to right,#E57373 50%, white 50%);
+    background-size: 200% 100%;
+    background-position:right bottom;
+    
+    transition:background 1s ease;
 	
-		box-shadow: 3px 3px 3px RGBA(0,0,20,.2);
+}
+.login-container .login-box input[type="text"]:focus, .login-container input[type="password"]:focus{
+	background: linear-gradient(to right,#F44336 50%, #eee 50%);
+	background-size: 200% 100%	;
+    background-position:right bottom ;
+	box-shadow: 3px 3px 3px RGBA(0,0,20,.2);
 }
 
 .login-container input[type="text"]:hover, .login-container input[type="password"]:hover{
-	background:#dfdfdf;
+	background: linear-gradient(to right,#EF5350 50%, #ddd 50%);
+	background-size: 200% 100%;
+    background-position:right bottom;
 }
 .login-container input[type="button"]{
 	background:#282828;
