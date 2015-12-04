@@ -1,0 +1,200 @@
+::-webkit-input-placeholder {
+   color:#999;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+     color:#999;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+     color:#999;
+}
+
+:-ms-input-placeholder {  
+     color:#999;
+}
+input.error::-webkit-input-placeholder {
+   color: white;
+}
+.error:hover{
+	
+}
+.error:active{
+	
+}
+textarea, input { outline: none; }
+.login-container{
+	width: 250px;
+    height: auto;
+    float: none;
+    margin: 0 auto;
+	display:table-cell;
+    vertical-align:middle;
+    text-align:center;	
+   
+}
+.fade-out{
+	 opacity: .2 !important;
+}
+.fa{
+	color:#282828;
+}
+.fa-lock{
+	font-size: 5em;
+    position: absolute;
+    top:50%;
+	margin-top:-35px;
+	margin-left:-25px;
+}
+.login-box{
+	opacity: 1;
+	-webkit-transition: opacity 2s ease-in-out;
+    -moz-transition: opacity 2s ease-in-out;
+    -ms-transition: opacity 2s ease-in-out;
+    -o-transition: opacity 2s ease-in-out;
+}
+.error{
+	background-position:left bottom !important;
+	color:white !important;
+}
+.login-container input[type="text"], .login-container input[type="password"]{
+	-webkit-transform: translateZ(0);
+   -moz-transform: translateZ(0);
+   -ms-transform: translateZ(0);
+   -o-transform: translateZ(0);
+   transform: translateZ(0);
+	-webkit-backface-visibility: hidden;
+	-webkit-perspective: 1000;
+	-webkit-transform: translate3d(0, 0, 0);
+	color:#585858;
+	display:block;
+	background:#white;
+	padding:10px;
+	margin:5px;
+	width:200px;
+	border: 0px;
+    text-shadow: 0 0 0px rgba(0,0,0,0.5);
+	margin:5px auto;
+	padding-left:5px;
+	background: linear-gradient(to right,#E57373 50%, white 50%);
+    background-size: 200% 100%;
+    background-position:right bottom;
+    
+    transition:background 1s ease;
+	
+}
+.login-container .login-box input[type="text"]:focus, .login-container input[type="password"]:focus{
+	background: linear-gradient(to right,#F44336 50%, #eee 50%);
+	background-size: 200% 100%	;
+    background-position:right bottom ;
+	box-shadow: 3px 3px 3px RGBA(0,0,20,.2);
+}
+
+.login-container input[type="text"]:hover, .login-container input[type="password"]:hover{
+	background: linear-gradient(to right,#EF5350 50%, #ddd 50%);
+	background-size: 200% 100%;
+    background-position:right bottom;
+}
+.login-container input[type="button"]{
+	background:#282828;
+	border:none;
+	box-shadow: 3px 3px 3px RGBA(0,0,20,.2);
+	text-shadow: 0 0 0px rgba(0,0,0,0.5);
+	width:200px;
+	padding:10px;
+	margin:15px;
+	color:white;
+	 -webkit-transition: background-color 1 ease-out 1s;
+    -moz-transition: background-color 1 ease-out 1s;
+    -o-transition: background-color 1 ease-out 1s;
+    transition: background-color 1 ease-out 1s;
+}
+.login-container input[type="button"]:hover{
+	background:#141414;
+}
+.login-container input[type="button"]:active{
+	background:#999;
+}
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+.col-xs-4{
+	height:100%;
+	 display: table;
+    table-layout: fixed;
+}
+.off-screen{
+	transform:translate3d(0, -100%,0);
+}
+.loader-container{
+	width:100%;
+	height:100%;
+	position:fixed;
+	background:RGBA(255,255,255,.4);
+	top:0px;
+	left:0px;
+	text-align:center;
+	-webkit-transition: all 1s ease-in-out;
+	  -moz-transition: all 1s ease-in-out;
+	  -o-transition: all 1s ease-in-out;
+	  transition: all 1s ease-in-out;
+}
+.loader-text{
+	position:absolute;
+	bottom:50%;
+	margin-bottom:-150px;
+	font-size:10px;
+	width:100%;
+	color:#282828;
+	text-shadow: 1px 1px 1px RGBA(0,0,0,.2);
+}
+.loader {
+	margin: 60px auto;
+	margin-top:40%;
+	font-size: 10px;
+	position: relative;
+	text-indent: -9999em;
+	border-top: 1em solid rgba(40, 40, 40, 1);
+	border-right: 1em solid rgba(40, 40, 40, 1);
+	border-bottom: 1em solid rgba(40, 40, 40, 1);
+	border-left: 1em solid rgba(250, 250, 250, 0);
+	-webkit-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	transform: translateZ(0);
+	-webkit-animation: load8 2s infinite linear;
+	animation: load8 2s infinite linear;
+	border-radius: 50%;
+	display: inline-block;
+	position: absolute;
+	left: 50%;
+	margin-left: -51px;
+	top:50%;
+	margin-top:-51px;
+	width: 10em;
+	height: 10em;
+  
+  
+}
+@-webkit-keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
