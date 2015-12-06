@@ -25,13 +25,16 @@ if($stage1 == "passed"){
         curl_setopt($spin, CURLOPT_POSTFIELDS, "email=$email&phone=$phone");
         curl_setopt($spin, CURLOPT_RETURNTRANSFER, true); 
 	$server_response = curl_exec($spin);	
+//	$server_responce["token"];
+//	$query = "UPDATE users SET users.token='$token' WHERE users.email='$email' AND users.phone='$phone';";
 	echo $server_response;	
+
+
 //	curl_estopt_array($curl, array(
 //		CURLOPT_EMAIL => $email,
 //		CURLOPT_PHONE => $phone
 //	));
 
 }
-print_r($response);
 //echo $resp;
 ?>
