@@ -7,10 +7,20 @@ $(function(){
 		error += inputValidation($(".login-box input:text"), 1);
 		error += inputValidation($(".login-box input:password"), 8);
 		if(error == 0){
-		$(".login-box").addClass("fade-out");
-		appendSpinner();
+			var password = $(".login-box input[type='password']").val();
+			var email = $(".login-box input[type='text']").val();
+			var formdata = new FormData();
+			formdata.append("email", email);
+			formdata.append("password", password);
+			doPost("../rest/login.php", "post", loginCallback, formdata);		
+
 		}
 	});
+	$(document).keypress( function(e){
+		if(e.which == 13){
+			$(".login-box input[type='button']").click();	
+		}
+	})
 	$("input").on('keyup', function(){
 		switch($(this).attr("type")) {
 			case "text":
@@ -20,9 +30,33 @@ $(function(){
 		}
 			
 	});
-		$("body").append('<div class="loader-container fade-out" style="display:none"><span class="fa fa-lock fa-5x"></span><div class="loader">Loading...</div><div class="loader-text">Waiting for Secondary Authentication</div></div>');
+	$("body").append('<div class="loader-container fade-out" style="display:none"><span class="fa fa-lock fa-5x"></span><div class="loader">Loading...</div><div class="loader-text">Waiting for Secondary Authentication</div></div>');
 	
 });
+function fullLoginCallback(respObj){
+	respObj = JSON.parse(respObj);
+	if(respObj.status == 1){
+		$(".loader-container").remove();
+		window.location = "done.html";	
+	} else {
+		window.location = "fail.html";
+	}
+}
+function loginCallback(respObj){
+	respObj = JSON.parse(respObj);
+	if(respObj.status == 1){
+		$(".login-box").addClass("fade-out");
+		appendSpinner();
+		var formdata = new FormData();
+		formdata.append("email", respObj.email);
+		formdata.append("phone", respObj.phone);
+		doPost("../rest/requestToken.php", "post", fullLoginCallback, formdata);
+	} else	 {
+		$(".login-box input:text, .login-box input:password").addClass("error");
+	}
+}
+
+
 function inputValidation(target){
 	var error = 0;
 	var min = validator[target.attr("type")];
